@@ -47,10 +47,10 @@ public class GolfController {
         return "golfjoin";
     }
 
-    @GetMapping("/glogin")
-    public String glogin(){
-        return "golfchoice";
-    }
+//    @GetMapping("/glogin")
+//    public String glogin(){
+//        return "golfchoice";
+//    }
 
     @GetMapping("/gaccount")
     public String gaccount(){
