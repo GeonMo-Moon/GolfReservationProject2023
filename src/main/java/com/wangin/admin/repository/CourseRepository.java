@@ -8,5 +8,5 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import java.util.Optional;
 
 public interface CourseRepository extends JpaRepository<CourseEntity, String>, QuerydslPredicateExecutor<CourseEntity> {
-
+//git
 }

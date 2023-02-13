@@ -5,7 +5,7 @@ import com.wangin.admin.entity.QCcEntity;
 
 public class CcPredicate {
     public static BooleanBuilder ccname(String ccname){
-
+//git
         QCcEntity qCcEntity = QCcEntity.ccEntity;
 
         BooleanBuilder builder = new BooleanBuilder();

@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="TEST_COUNTRY_CLUB")
 public class CcEntity {
-
+//git
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CC_NO")

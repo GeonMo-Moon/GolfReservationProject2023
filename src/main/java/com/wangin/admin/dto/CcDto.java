@@ -8,6 +8,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 public class CcDto {
+    //git
     private Long CC_NO;
     private String CC_NAME;
     private String CC_URL;

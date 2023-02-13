@@ -18,7 +18,7 @@ public class CourseDto {
     private String C_UPDATETIME;
 
     @Builder
-
+//git
     public CourseDto(Long C_NO, Long C_CC_NO, String C_CC_NAME, String C_NAME, int C_NUMBER,
                      String C_IDATETIME, String C_UPDATETIME){
         this.C_NO = C_NO;

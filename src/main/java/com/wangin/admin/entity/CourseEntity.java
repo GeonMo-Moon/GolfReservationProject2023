@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="course")
 public class CourseEntity {
-
+//git
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="C_NO")
