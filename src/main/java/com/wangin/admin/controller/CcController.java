@@ -18,12 +18,14 @@ import java.util.List;
 public class CcController {
     private GolfService golfService;
     private CcRepository ccRepository;
+// 준호씨의 방식
 
     @GetMapping("/gcountryclub")
     public String gcountryclub(Model m, HttpServletRequest request){
         List<CcEntity> ccn = ccRepository.findAll();
 
         m.addAttribute("ccname4",ccn);
+//        System.out.print(ccn);
         return "Countryclub";
     }
     @PostMapping("/countryclub2")
@@ -37,9 +39,8 @@ public class CcController {
         System.out.println("hi?");
         CcDto ccDto = new CcDto(null, ccname, ccurl, cccancel, ccopen, cctype, ccrv, null,null);
         golfService.Ccinsert(ccDto);
+//        return "Countryclub.html";
         return "/gcountryclub";
     }
-
-
 
 }

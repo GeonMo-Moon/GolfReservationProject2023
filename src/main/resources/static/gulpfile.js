@@ -1,98 +1,60 @@
-const path = require('path');
+var gulp = require('gulp'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create();
 
-// Config
-// -------------------------------------------------------------------------------
+var DEST = 'build/';
 
-const env = require('gulp-environment');
-process.env.NODE_ENV = env.current.name;
+gulp.task('scripts', function() {
+    return gulp.src([
+        'src/js/helpers/*.js',
+        'src/js/*.js',
+      ])
+      .pipe(concat('custom.js'))
+      .pipe(gulp.dest(DEST+'/js'))
+      .pipe(rename({suffix: '.min'}))
+      .pipe(uglify())
+      .pipe(gulp.dest(DEST+'/js'))
+      .pipe(browserSync.stream());
+});
 
-let serverPath;
-const conf = (() => {
-  const _conf = require('./build-config');
-  serverPath = _conf.base.serverPath;
-  templatePath = _conf.base.buildTemplatePath;
-  buildPath = _conf.base.buildPath;
-  return require('deepmerge').all([{}, _conf.base || {}, _conf[process.env.NODE_ENV] || {}]);
-})();
-
-conf.distPath = path.resolve(__dirname, conf.distPath).replace(/\\/g, '/');
-
-// Modules
-// -------------------------------------------------------------------------------
-
-const { parallel, series, watch } = require('gulp');
-const del = require('del');
-const colors = require('ansi-colors');
-const browserSync = require('browser-sync').create();
-colors.enabled = require('color-support').hasBasic;
-
-// Utilities
-// -------------------------------------------------------------------------------
-
-function srcGlob(...src) {
-  return src.concat(conf.exclude.map(d => `!${d}/**/*`));
-}
-
-// Tasks
-// -------------------------------------------------------------------------------
-
-const buildTasks = require('./tasks/build')(conf, srcGlob);
-const prodTasks = require('./tasks/prod')(conf);
-
-// Clean build directory
-// -------------------------------------------------------------------------------
-
-const cleanTask = function () {
-  return del([conf.distPath, buildPath], {
-    force: true
-  });
+// TODO: Maybe we can simplify how sass compile the minify and unminify version
+var compileSASS = function (filename, options) {
+  return sass('src/scss/*.scss', options)
+        .pipe(autoprefixer('last 2 versions', '> 5%'))
+        .pipe(concat(filename))
+        .pipe(gulp.dest(DEST+'/css'))
+        .pipe(browserSync.stream());
 };
 
-// Watch
-// -------------------------------------------------------------------------------
-const watchTask = function () {
-  watch(srcGlob('**/*.scss', '!fonts/**/*.scss'), buildTasks.css);
-  watch(srcGlob('fonts/**/*.scss'), parallel(buildTasks.css, buildTasks.fonts));
-  watch(srcGlob('**/*.@(js|es6)', '!*.js'), buildTasks.js);
-  // watch(srcGlob('**/*.png', '**/*.gif', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.swf'), copyTasks.copyAssets)
-};
+gulp.task('sass', function() {
+    return compileSASS('custom.css', {});
+});
 
-// Serve
-// -------------------------------------------------------------------------------
-const serveTasks = function () {
-  browserSync.init({
-    // ? You can change server path variable from build-config.js file
-    server: serverPath
-  });
-  watch([
-    // ? You can change add/remove files/folders watch paths in below array
-    'html/**/*.html',
-    'html-starter/**/*.html',
-    'assets/vendor/css/*.css',
-    'assets/vendor/css/rtl/*.css',
-    'assets/css/*.css',
-    'assets/js/*.js'
-  ]).on('change', browserSync.reload);
-};
+gulp.task('sass-minify', function() {
+    return compileSASS('custom.min.css', {style: 'compressed'});
+});
 
-const serveTask = parallel([serveTasks, watchTask]);
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: './'
+        },
+        startPath: './production/index.html'
+    });
+});
 
-// Build (Dev & Prod)
-// -------------------------------------------------------------------------------
+gulp.task('watch', function() {
+  // Watch .html files
+  gulp.watch('production/*.html', browserSync.reload);
+  // Watch .js files
+  gulp.watch('src/js/*.js', ['scripts']);
+  // Watch .scss files
+  gulp.watch('src/scss/*.scss', ['sass', 'sass-minify']);
+});
 
-const buildTask = conf.cleanDist
-  ? series(cleanTask, env.current.name === 'production' ? [buildTasks.all, prodTasks.all] : buildTasks.all)
-  : series(env.current.name === 'production' ? [buildTasks.all, prodTasks.all] : buildTasks.all);
-
-// Exports
-// -------------------------------------------------------------------------------
-module.exports = {
-  default: buildTask,
-  build: buildTask,
-  'build:js': buildTasks.js,
-  'build:css': buildTasks.css,
-  'build:fonts': buildTasks.fonts,
-  'build:copy': parallel([buildTasks.copy]),
-  watch: watchTask,
-  serve: serveTask
-};
+// Default Task
+gulp.task('default', gulp.series('browser-sync', 'watch'));

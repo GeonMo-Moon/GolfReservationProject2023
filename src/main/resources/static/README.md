@@ -1,193 +1,125 @@
-<p align="center">
-   <a href="https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/" target="_blank">
-      <img src="https://user-images.githubusercontent.com/749684/150333149-805037bc-8874-4a1f-876a-61a9683f8ef5.png" alt="sneat-logo" width="30px" height="auto">
-   </a>
-</p>
+# gentelella
 
-<h1 align="center">
-   <a href="https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/" target="_blank" align="center">
-      Sneat - Free Bootstrap 5 HTML Admin Template
-   </a>
-</h1>
+Gentelella Admin is a free to use Bootstrap admin template.
+This template uses the default Bootstrap 4 styles along with a variety of powerful jQuery plugins and tools to create a powerful framework for creating admin panels or back-end dashboards.
 
-<p align="center">Most Powerful & Comprehensive Free Bootstrap 5 HTML Admin Dashboard Template built for developers!</p>
+Theme uses several libraries for charts, calendar, form validation, wizard style interface, off-canvas navigation menu, text forms, date range, upload area, form autocomplete, range slider, progress bars, notifications and much more.
 
-![GitHub](https://img.shields.io/github/license/themeselection/sneat-html-admin-template-free) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/themeselection/sneat-html-admin-template-free) ![GitHub issues](https://img.shields.io/github/issues/themeselection/sneat-html-admin-template-free) ![GitHub closed issues](https://img.shields.io/github/issues-closed/themeselection/sneat-html-admin-template-free) ![Twitter Follow](https://img.shields.io/twitter/follow/Theme_Selection?style=social)
+We would love to see how you use this awesome admin template. You can notify us about your site, app or service by tweeting to [@colorlib](https://twitter.com/colorlib). Once the list will grown long enough we will write a post similar to [this](https://colorlib.com/wp/avada-theme-examples/) to showcase the best examples.
 
-[![Sneat - Bootstrap 5 HTML Admin Template Demo Screenshot](https://user-images.githubusercontent.com/80033712/153581472-452394ee-327a-4d00-a41a-c6e8036b7096.png)](https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/)
 
-## Introduction 🚀
+## Theme Demo
+![Gentelella Bootstrap Admin Template](https://colorlib.com/wp/wp-content/uploads/sites/2/gentelella-admin-template-preview.jpg 
+"Gentelella Theme Browser Preview")
 
-If you’re a developer looking for most Powerful & comprehensive [**Free Bootstrap 5 HTML Admin Template**](https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/) built for developers, rich with features, and highly customizable look no further than Sneat. We’ve followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
+**[Template Demo](https://colorlib.com/polygon/gentelella/index.html)**
 
-Build premium quality applications with ease. Use our innovative [bootstrap admin templates](https://themeselection.com/products/category/bootstrap-admin-templates/) to create eye-catching, high-quality WebApps. Your apps will be completely responsive, ensuring they’ll look stunning and function flawlessly on desktops, tablets, and mobile devices.
+## Documentation
 
-[View Demo](https://themeselection.com/demo/sneat-bootstrap-html-admin-template-free/html/)
+**[Documentation](https://colorlibhq.github.io/gentelella/)**
 
-## Installation ⚒️
+## Installation via Package Manager
 
-Automate time-consuming or repetitive tasks in your development workflow using Gulp 🥤
+Our goal is to make it installable on different Package Manager! Do you want to use it on your favorite Package Manager and you know how? Pull request all the way! 
 
-> Please note, the use of Node, Webpack & Gulp and their advanced settings are totally optional. You can use and customize the template without using them too.
+As of now, this is some installation available:
 
-Installing Node & Gulp and running it is super easy in Sneat, please follow these steps and you should be ready to rock 🤘
+**Bower**
 
-1. First of all, make sure you have installed [Node](https://nodejs.org/en/) (LTS). If Node.js is already installed in your system, make sure the installed version is `LTS` and jump to step 2
-
-2. Install the Gulp CLI: Open Terminal/Command Prompt and run the following command and wait until it finishes. If you have already installed Gulp CLI, you can skip this step and jump to step 3.
-
-```bash
-npm install --global gulp-cli
+```
+bower install gentelella --save
 ```
 
-3. Navigate to the Sneat root directory and run following command to install our local dependencies listed in `package.json`. You can use `npm` OR `yarn` as per your preference.
+**npm**
 
-> It is recommended to use Yarn
-
-```bash
-# For npm
-npm install --legacy-peer-deps
-
-# For Yarn
-yarn
+```
+npm install gentelella --save
 ```
 
-4. Now, you are ready to run `npm` tasks, below command will start the server and watch the code using [browsersync](https://browsersync.io/). Open [http://localhost:3000/](http://localhost:3000/) to check your development 🚀.
+**yarn**
 
-```bash
-# npm
-npm run serve
-
-# yarn
-yarn serve
 ```
+yarn add gentelella
+```
+## How to contribute
+To contribute, please ensure that you have stable [Node.js](https://nodejs.org/) and [npm](https://npmjs.com) installed.
 
-## Available Tasks 🧑‍💻
+Test if Gulp CLI is installed by running `gulp --version`.  If the command isn't found, run `npm install -g gulp`.  For more information about installing Gulp, see the Gulp's [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
 
-Open console/terminal, go to the Sneat root directory and run `npm run {task_name}`.i.e To generate build run `npm run build`.
+To have all gulp dependencies run ```npm install```
 
-Run a task with specified environment(development/production) just execute the task with `--env={environment}` option, i.e. `npm run build --env=production`.
+If `gulp` is installed, follow the steps below.
 
-> **Tip:** Use `npm run` command to list all predefined npm tasks from `package.json` file.
+1. Fork and clone the repo.
+2. Run `gulp`, this will open gentelella on your default browser
+3. Now you can code, code and code!
+4. Submit a pull request
 
-## What's Included 📦
+## Gentelella for other platforms and frameworks
 
-- Dashboard
-- Layouts
-  - Without menu
-  - Without Navbar
-  - Container
-  - Fluid
-  - Blank
-- Pages
-  - Account Settings
-  - Login
-  - Register
-  - Forgot Password
-  - Error
-  - Under Maintenance
-- Cards
-- User Interface
-  - **All Bootstrap Components**
-- Extended UI
-  - Perfect Scrollbar
-  - Text Divider
-- Boxicon
-- Form Elements
-  - Basic Inputs
-  - Input Groups
-- Form Layout
-  - Vertical Form
-  - Horizontal Form
-- Tables
+* [Gentelella on Ruby on Rails](https://github.com/iogbole/gentelella_on_rails) thanks to Israel Ogbole.
+* [Gentelella on Rails](https://github.com/mwlang/gentelella-rails) thanks to Michael Lang
+* [Gentelella on Smarty](https://github.com/microvb/otp-thing) with one time password generator, validator, and QR code generator that has no web dependencies (self-contained) in PHP thanks to MicroVB INC
+* [Gentelella integrated into Symfony 5](https://github.com/mamless/Gentella-admin-Symfony-5) full stack PHP framework thanks to  Mamour Wane.
+* [Gentelella on Yii framework](https://github.com/yiister/yii2-gentelella) with an asset bundle, a layout template and some widgets.
+* [Gentelella on Angular](https://github.com/kmkatsma/angular2-webpack-starter-gentelella) Angular Webpack Starter modified to utilize the Gentelella.
+* [Gentelella on Aurelia](https://github.com/kmkatsma/aurelia-gentelella) Typescript webpack skeleton modified to utilize the Gentelella.
+* [Gentelella on Laravel](https://github.com/Labs64/laravel-boilerplate) PHP / Laravel 5 boilerplate project with Gentelella Admin theme support.
+* [Gentelella on Django](https://github.com/GiriB/django-gentelella) Gentelella modified to fit as a Django app
+* [Gentelella on Flask](https://github.com/afourmy/flask-gentelella) Gentelella modified to fit as a Flask app
+* [Gentelella on CakePHP](https://github.com/backstageel/cakephp-gentelella-theme) Gentelella modified to work on CakePHP
+* [Gentelella right to left](https://github.com/mortezakarimi/gentelella-rtl) Gentelella modified to work with right to left languages like Persian
+* [Gentelella-rtl on Yii framework](https://github.com/mortezakarimi/yii2-gentelella-rtl) with an asset bundle, a layout template and some widgets. inspired from [Gentelella on Yii framework](https://github.com/yiister/yii2-gentelella)
+* [Gentelella by React](https://github.com/thomaslwq/react-admin) Gentelella realized by React
 
-## What's in Premium Version 💎
+Let us know if you have done integration for this admin template on other platforms and frameworks and we'll be happy to share your work.
 
-| Sneat Free Version                                                                        | Sneat Premium Version                                                                                                            |
-| ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| [Demo](https://themeselection.com/demo/sneat-bootstrap-html-admin-template-free/html/)    | [Demo](https://themeselection.com/demo/sneat-bootstrap-html-admin-template/html/vertical-menu-template/)                         |
-| [Download](https://themeselection.com/products/sneat-free-bootstrap-html-admin-template/) | [Purchase](https://themeselection.com/products/sneat-bootstrap-html-admin-template/)                                             |
-| Single vertical Menu                                                                      | Vertical Menu + Horizontal Menu                                                                                                  |
-| Simple Light Style                                                                        | Light & Dark Style                                                                                                               |
-| Default Theme                                                                             | Default, Semi Dark & Bordered Themes                                                                                             |
-| Fixed Layout(Menu)                                                                        | Fixed & Static Layout(Menu)                                                                                                      |
-| 1 Simple Dashboard                                                                        | 3 Niche Dashboards                                                                                                               |
-| -                                                                                         | Multiple Ready to use Application like Calendar, Invoice, Users List, Users View, Roles and Permission etc.                      |
-| Simple From Elements                                                                      | Advance form elements, validation & form wizard                                                                                  |
-| Basic Cards                                                                               | Basic, Advance , Statistics, Analytics, Gamifications and Actions Cards                                                          |
-| Basic User Interface(Components)                                                          | Advance and Custom User Interfaces(Components)                                                                                   |
-| Two Extended Components                                                                   | Twelve Ready to use Extended Components                                                                                          |
-| -                                                                                         | Quick Search - Quickly navigate between pages (w/ hotkey support)                                                                |
-| Basic Pages                                                                               | Authentication Pages in 2 Variants + Ready to use pages like User Profile, Account Settings,FAQ, Help Center, Pricing, Misc etc. |
-| -                                                                                         | 3D Characters + Illustrations                                                                                                    |
-| Basic tables                                                                              | Advanced tables                                                                                                                  |
-| -                                                                                         | Quick customization using theme config file                                                                                      |
-| -                                                                                         | Leaflet Maps                                                                                                                     |
-| 1 Chart Library                                                                           | 2 Chart Libraries                                                                                                                |
-| -                                                                                         | Multiple Navbar & Menu Options                                                                                                   |
-| -                                                                                         | Starter-kit                                                                                                                      |
-| -                                                                                         | Internationalization support                                                                                                     |
-| -                                                                                         | RTL Support                                                                                                                      |
-| Regular Support                                                                           | Priority Support                                                                                                                 |
-| Detailed Documentation                                                                    | Detailed Documentation                                                                                                           |
+## Scripts included:
+* Bootstrap
+* Font Awesome
+* jQuery-Autocomplete
+* FullCalendar
+* Charts.js
+* Bootstrap Colorpicker
+* Cropper
+* dataTables
+* Date Range Picker for Bootstrap
+* Dropzone
+* easyPieChart
+* ECharts
+* bootstrap-wysiwyg
+* Flot - Javascript plotting library for jQuery.
+* gauge.js
+* iCheck
+* jquery.inputmask plugin
+* Ion.RangeSlider
+* jQuery
+* jVectorMap
+* moment.js
+* Morris.js - pretty time-series line graphs
+* PNotify - Awesome JavaScript notifications
+* NProgress
+* Pace
+* Parsley
+* bootstrap-progressbar
+* select2
+* Sidebar Transitions - simple off-canvas navigations
+* Skycons - canvas based wather icons
+* jQuery Sparklines plugin
+* switchery - Turns HTML checkbox inputs into beautiful iOS style switches
+* jQuery Tags Input Plugin
+* Autosize - resizes text area to fit text
+* validator - HTML from validator using jQuery
+* jQuery Smart Wizard
 
-## Documentation 📜
+## Other templates and useful resources
+* [Free Bootstrap Admin Templates](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/ "Bootstrap Admin Templates on Colorlib") - List of the best Free Bootstrap admin dashboard templates that are available for free for personal and commercial use.
+* [Free Admin Templates](https://colorlib.com/wp/free-html5-admin-dashboard-templates/ "List of free HTML based admin templates by Colorlib") - Long list of the best free HTML5 powered admin dashboard templates. Available for personal and commercial use.
+* [Angular Templates](https://colorlib.com/wp/angularjs-admin-templates/ "Angular Admin Templates on Colorlib") - List of the most popular admin templates based on AngularJS.
+* [WordPress Admin Templates](https://colorlib.com/wp/wordpress-admin-dashboard-themes-plugins/ "List of WordPress Admin Dashboard Templates and Plugins by Colorlib") - List of the best WordPress admin dashboard templates and plugins that will add a personal touch to your WordPress dashboard.
+* [WordPress Themes](https://colorlib.com/wp/free-wordpress-themes/ "List of Free WordPress themes by Colorlib") - A huge selection of the best free WordPress themes that are all licensed under GPL and are available for personal and commercial use without restrictions.
 
-Check out our live [Documentation](https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/)
+## License information
+Gentelella is licensed under The MIT License (MIT). Which means that you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software. But you always need to state that Colorlib is the original author of this template.
 
-## Browser Support 🖥️
-
-At present, we officially aim to support the last two versions of the following browsers:
-
-- Chrome (latest)
-- FireFox (latest)
-- Safari (latest)
-- Microsoft Edge (latest)
-- Opera (latest)
-
-## Useful Links 🎁
-
-- [Freebies](https://themeselection.com/products/category/download-free-admin-templates/)
-- [Download Free Admin Templates](https://themeselection.com/products/category/download-free-admin-templates/)
-- [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
-
-## Support 👨‍💻
-
-We use GitHub issues as support tickets to manage Item support.
-
-1. In order to raise the GitHub issue, you must have a github account. [Raise a Issue](https://github.com/themeselection/sneat-html-admin-template-free/issues)
-
-## License ©
-
-- Copyright © [ThemeSelection](https://themeselection.com/)
-- Licensed under [MIT](https://github.com/themeselection/sneat-html-admin-template-free/blob/master/LICENSE.md)
-
-## Contributing 🦸
-
-Contribution are always welcome and recommended! Here is how:
-
-- Fork the repository ([here is the guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo)).
-- Clone to your machine `git clone https://github.com/YOUR_USERNAME/REPO_URL` Make your changes
-- Create a pull request
-
-### Contribution Requirements 🧰
-
-- When you contribute, you agree to give a non-exclusive license to ThemeSelection to use that contribution in any context as we (ThemeSelection) see appropriate.
-- If you use content provided by another party, it must be appropriately licensed using an open source license.
-- Contributions are only accepted through Github pull requests.
-- Finally, contributed code must work in all supported browsers.
-
-## Creators 😇
-
-- [ThemeSelection](https://themeselection.com)
-
-## Changelog 📆
-
-Please refer to the [CHANGELOG](https://themeselection.com/demo/sneat-bootstrap-html-admin-template-free/changelog.html) file. We will add a detailed release notes to each new release.
-
-## Social Media 🌍
-
-- Twitter : [https://twitter.com/Theme_Selection](https://twitter.com/Theme_Selection)
-- Facebook : [https://www.facebook.com/ThemeSelections/](https://www.facebook.com/ThemeSelections/)
-- Pinterest : [https://pinterest.com/themeselect/](https://pinterest.com/themeselect/)
-- Instagram : [https://www.instagram.com/themeselection/](https://www.instagram.com/themeselection/)
+Project is developed and maintained by [Colorlib](https://colorlib.com/ "Colorlib - Make Your First Blog") and Aigars Silkalns

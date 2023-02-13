@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <a href="/gjoin">회원가입</a><br>
-    <a href="/glogin">로그인</a><br>
-    <a href="/gaccount">cc계정등록</a><br>
-    <a href="/gcountryclub">골프장등록</a><br>
-    <a href="/greservationi">예약정보 입력</a><br>
-    <a href="/greservations">예약정보 조회</a>
+<p th:if="${session.user_signature}!=null" th:text="${session.user_signature}+'님 환영합니다!'"></p>
+<a href="/gjoin">회원가입</a><br>
+<a href="/glogin">로그인</a><br>
+<a href ="/glogout">로그아웃</a><br>
+<a href="/gaccount">cc계정등록</a><br>
+<a href="/gcountryclub">골프장등록</a><br>
+<a href="/greservationi">예약정보 입력</a><br>
+<a href="/greservations">예약정보 조회</a>
 </body>
 </html>

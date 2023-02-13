@@ -1,7 +1,7 @@
 package com.wangin.admin.controller;
 
 
-import com.wangin.admin.common.SessionCheck;
+//import com.wangin.admin.common.SessionCheck;
 import com.wangin.admin.dto.CcDto;
 import com.wangin.admin.dto.CourseDto;
 import com.wangin.admin.entity.CcEntity;
@@ -29,7 +29,6 @@ public class CourseController {
     private CcRepository ccRepository;
 
 
-
     @GetMapping("/course")
     public String gcourse(Model m, HttpServletRequest request){
         return "Course.html";
@@ -42,6 +41,7 @@ public class CourseController {
                            @RequestParam(required = false, defaultValue = "", value = "coursenum") int coursenum) {
 
 
+//        Optional<CcEntity> ccn = ccRepository.findById(ccname2);
         Optional<CcEntity> ccnn = ccRepository.findOne(CcPredicate.ccname(ccname2));
 
         Long findccnum = ccnn.get().getCC_NO();
