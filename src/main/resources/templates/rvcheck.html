@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    div {
+        border-style:solid;
+    }
+    </style>
+</head>
+<body>
+<div class="con" style="display:table; width:800px;">
+    <div style="display:table-row">
+        <div class ="A" style="display:table-cell">예약 번호</div>
+        <div class ="B" style="display:table-cell">예약 CC 회원 번호</div>
+        <div class ="C" style="display:table-cell">회원 번호</div>
+        <div class ="D" style="display:table-cell">골프장 번호</div>
+        <div class ="E" style="display:table-cell">CC ID</div>
+        <div class ="F" style="display:table-cell">CC PASSWORD</div>
+        <div class ="G" style="display:table-cell">예약년도</div>
+        <div class ="H" style="display:table-cell">예약월</div>
+        <div class ="I" style="display:table-cell">예약일</div>
+        <div class ="J" style="display:table-cell">시작 시간</div>
+        <div class ="K" style="display:table-cell">종료 시간</div>
+        <div class ="L" style="display:table-cell">홀</div>
+        <div class ="M" style="display:table-cell">코스</div>
+        <div class ="N" style="display:table-cell">인원수</div>
+        <div class ="O" style="display:table-cell">성별</div>
+        <div class ="P" style="display:table-cell">상태</div>
+        <div class ="Q" style="display:table-cell">선택</div>
+        <div class ="R" style="display:table-cell">취소일</div>
+        <div class ="S" style="display:table-cell">IDATETIME</div>
+        <div class ="T" style="display:table-cell">UDATETIME</div>
+
+    </div>
+    <!--  변수는 키 값으로 선언해줘야 됨  -->
+    <div id = "listrv" th:each="Co : ${rvinfo}" style="display:table-row">
+        <div class ="A" style="display:table-cell" th:text="${Co.RI_NO}">A</div>
+        <div class ="B" style="display:table-cell" th:text="${Co.RI_CA_NO}">A</div>
+        <div class ="C" style="display:table-cell" th:text="${Co.RI_UI_NO}">A</div>
+        <div class ="D" style="display:table-cell" th:text="${Co.RI_CC_NO}">A</div>
+        <div class ="E" style="display:table-cell" th:text="${Co.RI_CA_ID}">A</div>
+        <div class ="F" style="display:table-cell" th:text="${Co.RI_CA_PASSWORD}">A</div>
+        <div class ="G" style="display:table-cell" th:text="${Co.RI_YEAR}">A</div>
+        <div class ="H" style="display:table-cell" th:text="${Co.RI_MONTH}">A</div>
+        <div class ="I" style="display:table-cell" th:text="${Co.RI_DAY}">A</div>
+        <div class ="J" style="display:table-cell" th:text="${Co.RI_START_TIME}">A</div>
+        <div class ="K" style="display:table-cell" th:text="${Co.RI_END_TIME}">A</div>
+        <div class ="L" style="display:table-cell" th:text="${Co.RI_HALL}">A</div>
+        <div class ="M" style="display:table-cell" th:text="${Co.RI_COURSE}">A</div>
+        <div class ="N" style="display:table-cell" th:text="${Co.RI_PERSON}">A</div>
+        <div class ="O" style="display:table-cell" th:text="${Co.RI_SEX}">A</div>
+        <div class ="P" style="display:table-cell" th:text="${Co.RI_STATE}">A</div>
+        <div class ="Q" style="display:table-cell" th:text="${Co.RI_CHOICE}">A</div>
+        <div class ="R" style="display:table-cell" th:text="${Co.RI_CANCLE_DAY}">A</div>
+        <div class ="S" style="display:table-cell" th:text="${Co.RI_IDATETIME}">A</div>
+        <div class ="T" style="display:table-cell" th:text="${Co.RI_UDATETIME}">A</div>
+    </div>
+</div>
+<button><a href = "/logout">로그인 페이지</a></button>
+</body>
+</html>

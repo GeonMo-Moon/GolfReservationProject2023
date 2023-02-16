@@ -4,7 +4,8 @@ function golfjoin(){
     const uname = $("#uname").val();
     const uphone = $("#uphone").val();
     console.log("여기가 문제구만?");
-    const sms = $("input[name='sms']:checked").val();
+//    const sms = $("input[name='sms']:checked").val();
+    const sms = $("#sms").val();
     console.log(sms);
 
     const data = {

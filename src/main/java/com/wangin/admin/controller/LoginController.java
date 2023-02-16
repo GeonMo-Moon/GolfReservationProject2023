@@ -2,6 +2,11 @@ package com.wangin.admin.controller;
 
 
 import com.wangin.admin.common.SessionCheck;
+import com.wangin.admin.entity.CcEntity;
+import com.wangin.admin.entity.GolfEntity;
+import com.wangin.admin.entity.GolfUserEntity;
+import com.wangin.admin.predicate.CcPredicate;
+import com.wangin.admin.predicate.LoginPredicate;
 import com.wangin.admin.repository.CcRepository;
 import com.wangin.admin.repository.GolfUserRepository;
 import com.wangin.admin.service.GolfService;
@@ -13,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @AllArgsConstructor
@@ -25,7 +32,7 @@ public class LoginController {
     @GetMapping("/glogin")
     public String login(Model m, HttpServletRequest request)
     {
-        return "golflogin.html";
+        return "login.html";
     }
 
     @PostMapping("/")
@@ -33,8 +40,7 @@ public class LoginController {
         HttpSession session = request.getSession();
         String returnValue = "";
         if(new SessionCheck().loginSessionCheck(request)){
-
-            returnValue = "/golfchoice";
+            returnValue = "/formRI";
         }else{
             returnValue = "golflogin.html";
         }
@@ -44,7 +50,6 @@ public class LoginController {
 
     @GetMapping("/golfchoice")
     public String gchoice(Model m, HttpServletRequest request){
-
         return "golfchoice";
     }
 
@@ -60,6 +65,8 @@ public class LoginController {
         if(loginResult==1){
             msg.put("loginResult", "1");
             session.setAttribute("user_signature", userid);
+            String sessioninid = (String) session.getAttribute("user_signature");
+            System.out.print(sessioninid);
         }else{
             msg.put("loginResult","0");
         }

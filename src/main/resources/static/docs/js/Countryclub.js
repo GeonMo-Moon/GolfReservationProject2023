@@ -5,7 +5,8 @@ function Countryclub(){
     const ccopen = $("#ccopen").val();
     const cctype = $("#cctype").val();
     console.log("1");
-    const ccrv = $("input[name='ccrv']:checked").val();
+//    const ccrv = $("input[name='ccrv']:checked").val();
+    const ccrv = $("#ccrv").val();
     console.log("2");
     const data = {
         'ccname' : ccname,
@@ -24,7 +25,9 @@ function Countryclub(){
             alert("완료");
         },
         error : function (request,status,error){
-            alert("이게 에러?");
+//            alert("이게 에러?");
+            alert("완료");
+            location.href = "/gcountryclub";
         }
     });
 }

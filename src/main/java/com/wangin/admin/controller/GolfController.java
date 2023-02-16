@@ -1,18 +1,32 @@
 package com.wangin.admin.controller;
 
+import com.wangin.admin.common.SessionCheck;
 import com.wangin.admin.dto.GolfDto;
 import com.wangin.admin.dto.GolfUserDto;
+import com.wangin.admin.entity.GolfEntity;
+import com.wangin.admin.entity.GolfUserEntity;
+import com.wangin.admin.predicate.LoginPredicate;
+import com.wangin.admin.predicate.RvPredicate;
 import com.wangin.admin.repository.GolfRepository;
+import com.wangin.admin.repository.GolfUserRepository;
 import com.wangin.admin.service.GolfService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -23,6 +37,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -32,32 +48,73 @@ import java.util.concurrent.Executors;
 @RequestMapping("/")
 public class GolfController {
 
-    private GolfService golfService;
 
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    private GolfService golfService;
+    private GolfUserRepository golfUserRepository;
     private GolfRepository golfRepository;
 
-//    @GetMapping("/")
-//    public String main(){
-//        return "golfchoice";
-//    }
     @GetMapping("/")
     public String main(){
-            return "form1";
-        }
+        return "formRI";
+    }
+
     @GetMapping("/gjoin")
     public String gjoin(){
         return "golfjoin";
     }
+
+//    @GetMapping("/gaccount")
+//    public String gaccount(Model m, HttpServletRequest request){
+//        String returnValue= "";
+//        // 로그인 성공시 페이지 이동가능하게
+//        if(new SessionCheck().loginSessionCheck(request)){
+//            returnValue = "ccjoin";
+//        }else{
+//            returnValue = "golfchoice";
+//        }
+//        return returnValue;
+//    }
+
+
+//    @GetMapping("/gcountryclub")
+//    public String gcountryclub(){
+//        return "golfchoice";
+//    }
+//        @GetMapping("/gcountryclub")
+//    public String gcountryclub(){
+//        return "Countryclub.html";
+//    }
 
     @GetMapping("/greservationi")
     public String greservationi(){
         return "golfclupinsert";
     }
 
+    //    @GetMapping("/greservations")
+//    public String greservations(){
+//        return "golfchoice";
+//    }
     @GetMapping("/greservations")
-    public String greservations(){
-        return "golfchoice";
+    public String greservations(Model m, HttpServletRequest request) {
+        String returnValue = "";
+        HttpSession session = request.getSession();
+        if(new SessionCheck().loginSessionCheck(request)){
+            String sessioninid = (String) session.getAttribute("user_signature");
+            Optional<GolfUserEntity> guet = golfUserRepository.findOne(LoginPredicate.hiuser(sessioninid));
+            Long finduinum = guet.get().getUI_NO();
+            List<GolfEntity> listgolfentity = (List)golfRepository.findAll(RvPredicate.rvv(finduinum));
+            m.addAttribute("rvinfo",listgolfentity);
+            returnValue = "rvcheck";
+        }else{
+            returnValue = "formRI";
+        }
+        return returnValue;
+//        return "logintest.html";
     }
+
 
     @PostMapping("/golftest2")
     public String golftest2(HttpServletRequest request, Model model, @RequestParam(required = false, defaultValue = "", value = "uid") String uid, @RequestParam(required = false, defaultValue = "", value = "upw") String upw, String... args){

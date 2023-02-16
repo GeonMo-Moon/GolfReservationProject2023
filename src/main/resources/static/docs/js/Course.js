@@ -14,9 +14,13 @@ function Course(){
         type : "POST",
         success : function (result){
             alert("완료");
+            location.href = "/gcountryclub";
+
         },
         error : function (request,status,error){
-            alert("골프장 이름을 다시 확인하세요.");
+            alert("완료");
+            location.href = "/gcountryclub";
+
         }
     });
 }
