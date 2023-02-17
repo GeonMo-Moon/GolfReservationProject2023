@@ -29,10 +29,16 @@ public class LoginController {
     private GolfService loginService;
     private CcRepository ccRepository;
 
-    @GetMapping("/glogin")
+//    @GetMapping("/glogin")
+//    public String login(Model m, HttpServletRequest request)
+//    {
+//        return "golflogin.html";
+//    }
+
+        @GetMapping("/glogin")
     public String login(Model m, HttpServletRequest request)
     {
-        return "login.html";
+        return "formLI.html";
     }
 
     @PostMapping("/")
@@ -40,9 +46,9 @@ public class LoginController {
         HttpSession session = request.getSession();
         String returnValue = "";
         if(new SessionCheck().loginSessionCheck(request)){
-            returnValue = "/formRI";
+            returnValue = "formRI";
         }else{
-            returnValue = "golflogin.html";
+            returnValue = "formLI";
         }
         return returnValue;
 //        return "logintest.html";
@@ -50,6 +56,7 @@ public class LoginController {
 
     @GetMapping("/golfchoice")
     public String gchoice(Model m, HttpServletRequest request){
+
         return "golfchoice";
     }
 

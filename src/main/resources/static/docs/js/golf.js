@@ -20,29 +20,28 @@ function golfres(){
 }
 
 function golfinsert(){
-    const mountin = $("#mountain").val();
+    console.log("11");
+    const mountin = $("#cc_name").val();
     const hope_y = $("#year").val();
     const hope_m = $("#month").val();
     const hope_d = $("#day").val();
-    const hope_c = $("#cource").val();
-    const hope_t1 = $("#time1").val();
-    const hope_t2 = $("#time2").val();
-    const hope_h = $("#hall").val();
-    const user_id = $("#uid").val();
-    const user_pw = $("#upw").val();
+    const hope_t1 = $("#t1").val();
+    const hope_t2 = $("#t2").val();
+    const hope_c = $("#c").val();
+    const hope_h = $("#cc").val();
 
+    console.log("22");
     const data = {
         'mountin' : mountin,
         'hope_y' : hope_y,
         'hope_m' : hope_m,
         'hope_d' : hope_d,
-        'hope_c' : hope_c,
         'hope_t1' : hope_t1,
         'hope_t2' : hope_t2,
-        'hope_h' : hope_h,
-        'user_id' : user_id,
-        'user_pw' : user_pw
+        'hope_c' : hope_c,
+        'hope_h' : hope_h
     };
+    console.log("33");
     $.ajax({
         url : "/golftest3",
         data : data,
@@ -56,6 +55,7 @@ function golfinsert(){
     });
 }
 
+/*
 document.getElementById("upw")
     .addEventListener("keydown", function (e){
         if (e.code === 'Enter'){
@@ -68,4 +68,4 @@ document.getElementById("uid")
         if (e.code === 'Enter'){
             document.getElementById("reservation").click();
         }
-    });
+    });*/

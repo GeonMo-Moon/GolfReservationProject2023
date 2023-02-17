@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @NoArgsConstructor
 @Getter
@@ -21,13 +22,13 @@ public class GolfEntity {
     private Long RI_NO;
 
     @Column(name = "RI_CA_NO")
-    private int RI_CA_NO;
+    private Long RI_CA_NO;
 
     @Column(name = "RI_UI_NO")
-    private int RI_UI_NO;
+    private Long RI_UI_NO;
 
     @Column(name = "RI_CC_NO")
-    private int RI_CC_NO;
+    private Long RI_CC_NO;
 
     @Column(name = "RI_CA_ID")
     private String RI_CA_ID;
@@ -79,7 +80,7 @@ public class GolfEntity {
 
     @Builder
 
-    public GolfEntity(Long RI_NO, int RI_CA_NO, int RI_UI_NO, int RI_CC_NO, String RI_CA_ID, String RI_CA_PASSWORD, int RI_YEAR, int RI_MONTH, int RI_DAY, int RI_START_TIME, int RI_END_TIME, int RI_HALL, int RI_COURSE, int RI_PERSON, int RI_SEX,
+    public GolfEntity(Long RI_NO, Long RI_CA_NO, Long RI_UI_NO, Long RI_CC_NO, String RI_CA_ID, String RI_CA_PASSWORD, int RI_YEAR, int RI_MONTH, int RI_DAY, int RI_START_TIME, int RI_END_TIME, int RI_HALL, int RI_COURSE, int RI_PERSON, int RI_SEX,
                       int RI_STATE, int RI_CHOICE, String RI_CANCLE_DAY, String RI_IDATETIME, String RI_UDATETIME) {
         this.RI_NO = RI_NO;
         this.RI_CA_NO = RI_CA_NO;

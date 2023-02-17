@@ -3,6 +3,8 @@ function ccjoin(){
     const ccid = $("#ccid").val();
     const ccpw = $("#ccpw").val();
 
+    console.log(ccname+ccid+ccpw);
+
     const data = {
         'ccname2' : ccname,
         'ccid' : ccid,
@@ -13,7 +15,8 @@ function ccjoin(){
         data : data,
         type : "POST",
         success : function (result){
-            alert("완료");
+            alert("등록완료");
+            location.href = "/gaccount";
         },
         error : function (request,status,error){
             alert("이게 에러?");

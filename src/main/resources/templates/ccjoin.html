@@ -8,14 +8,14 @@
 <!--골프장 이름 <input type="text" id="name"/><br>-->
 골프장 이름 <select id = "ccname2" th:field="*{ccname4}" class="form-select">
     <option value="">골프장 선택</option>
-    <option th:each="Co : ${ccname4}" th:value="${Co.CC_NAME}"
-            th:text="${Co.CC_NAME}">A</option>
+    <option th:each="Co : ${ccname4}" th:value="${Co.RI_CA_ID}"
+            th:text="${Co.RI_CA_ID}"></option>
 </select>
 <p></p>
 CC 아이디 <input type="text" id="ccid"/><br>
 CC 비밀번호 <input type="text" id="ccpw"/><br>
 <button type="button" onclick="ccjoin()" id="save">등록</button>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="/js/cc_join.js"></script>
+<script src="docs/js/cc_join.js"></script>
 </body>
 </html>

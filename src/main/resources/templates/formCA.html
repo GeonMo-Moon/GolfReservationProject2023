@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<!-- Meta, title, CSS, favicons, etc. -->
@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Gentelella Alela! | </title>
+	<title>안드로이드 골프 </title>
 
 	<!-- Bootstrap -->
 	<link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
 			<div class="col-md-3 left_col">
 				<div class="left_col scroll-view">
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="/" class="site_title"><span>Golf Reservation!</span></a>
+						<a href="/" class="site_title"><span>Android Golf</span></a>
 					</div>
 
 					<div class="clearfix"></div>
@@ -50,7 +50,7 @@
 						</div>
 						<div class="profile_info">
 							<span>Welcome</span>
-							<h2><!--로그인시 여기다가 이름 띄워주면 좋을듯--></h2>
+							<h2 th:if="${session.user_signature}!=null" th:text="${session.user_signature}+'님 환영합니다!'"><!--로그인시 여기다가 이름 띄워주면 좋을듯--></h2>
 						</div>
 					</div>
 					<!-- /menu profile quick info -->
@@ -60,27 +60,26 @@
 					<!-- sidebar menu -->
 					<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 						<div class="menu_section">
-							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-									<ul class="nav child_menu">
+								<li><a href="/gjoin"><!--<i class="fa fa-home"></i>--> 회원가입 <!--<span class="fa fa-chevron-down"></span>--></a>
+									<!--<ul class="nav child_menu">
 										<li><a href="index.html">Dashboard</a></li>
 										<li><a href="index2.html">Dashboard2</a></li>
 										<li><a href="index3.html">Dashboard3</a></li>
-									</ul>
+									</ul>-->
 								</li>
-								<li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-									<ul class="nav child_menu">
-										<li><a href="form1.html">General Form</a></li>
+								<li><a href="/glogin"><!--<i class="fa fa-edit"></i>--> 로그인 <!--<span class="fa fa-chevron-down"></span>--></a>
+									<!--<ul class="nav child_menu">
+										<li><a href="formRI.html">General Form</a></li>
 										<li><a href="form_advanced.html">Advanced Components</a></li>
 										<li><a href="form_validation.html">Form Validation</a></li>
 										<li><a href="form_wizards.html">Form Wizard</a></li>
 										<li><a href="form_upload.html">Form Upload</a></li>
 										<li><a href="form_buttons.html">Form Buttons</a></li>
-									</ul>
+									</ul>-->
 								</li>
-								<li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-									<ul class="nav child_menu">
+								<li><a href="/gaccount"><!--<i class="fa fa-desktop"></i>--> cc계정 등록 <!--<span class="fa fa-chevron-down"></span>--></a>
+									<!--<ul class="nav child_menu">
 										<li><a href="general_elements.html">General Elements</a></li>
 										<li><a href="media_gallery.html">Media Gallery</a></li>
 										<li><a href="typography.html">Typography</a></li>
@@ -90,32 +89,38 @@
 										<li><a href="invoice.html">Invoice</a></li>
 										<li><a href="inbox.html">Inbox</a></li>
 										<li><a href="calendar.html">Calendar</a></li>
-									</ul>
+									</ul>-->
 								</li>
-								<li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-									<ul class="nav child_menu">
+								<li><a href="/gcountryclub"><!--<i class="fa fa-table"></i>--> 골프장 등록 <!--<span class="fa fa-chevron-down"></span>--></a>
+									<!--<ul class="nav child_menu">
 										<li><a href="tables.html">Tables</a></li>
 										<li><a href="tables_dynamic.html">Table Dynamic</a></li>
-									</ul>
+									</ul>-->
 								</li>
-								<li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-									<ul class="nav child_menu">
+								<li><a href="/"><!--<i class="fa fa-bar-chart-o"></i>--> 예약정보 입력 <!--<span class="fa fa-chevron-down"></span>--></a>
+									<!--<ul class="nav child_menu">
 										<li><a href="chartjs.html">Chart JS</a></li>
 										<li><a href="chartjs2.html">Chart JS2</a></li>
 										<li><a href="morisjs.html">Moris JS</a></li>
 										<li><a href="echarts.html">ECharts</a></li>
 										<li><a href="other_charts.html">Other Charts</a></li>
-									</ul>
+									</ul>-->
 								</li>
-								<li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-									<ul class="nav child_menu">
+								<li><a href="/greservations"><!--<i class="fa fa-clone"></i>--> 예약정보 확인 <!--<span class="fa fa-chevron-down"></span>--></a>
+									<!--<ul class="nav child_menu">
 										<li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
 										<li><a href="fixed_footer.html">Fixed Footer</a></li>
-									</ul>
+									</ul>-->
+								</li>
+								<li><a href="/glogout"><!--<i class="fa fa-clone"></i>--> 로그아웃 <!--<span class="fa fa-chevron-down"></span>--></a>
+									<!--<ul class="nav child_menu">
+										<li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+										<li><a href="fixed_footer.html">Fixed Footer</a></li>
+									</ul>-->
 								</li>
 							</ul>
 						</div>
-						<div class="menu_section">
+						<!--<div class="menu_section">
 							<h3>Live On</h3>
 							<ul class="nav side-menu">
 								<li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
@@ -156,7 +161,7 @@
 								</li>
 								<li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
 							</ul>
-						</div>
+						</div>-->
 
 					</div>
 					<!-- /sidebar menu -->
@@ -181,14 +186,14 @@
 			</div>
 
 			<!-- top navigation -->
-			<!--<div class="top_nav">
+			<div class="top_nav">
 				<div class="nav_menu">
 					<div class="nav toggle">
 						<a id="menu_toggle"><i class="fa fa-bars"></i></a>
 					</div>
 					<nav class="nav navbar-nav">
 						<ul class=" navbar-right">
-							<li class="nav-item dropdown open" style="padding-left: 15px;">
+							<!--<li class="nav-item dropdown open" style="padding-left: 15px;">
 								<a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
 									<img src="images/img.jpg" alt="">John Doe
 								</a>
@@ -201,66 +206,66 @@
 									<a class="dropdown-item" href="javascript:;">Help</a>
 									<a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
 								</div>
-							</li>
+							</li>-->
 
 							<li role="presentation" class="nav-item dropdown open">
 								<a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
 									<i class="fa fa-envelope-o"></i>
-									<span class="badge bg-green">6</span>
+									<span class="badge bg-green">113</span><!--로그 개수가 있어야 한다.-->
 								</a>
 								<ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
 									<li class="nav-item">
 										<a class="dropdown-item">
-											<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+											<!--<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>-->
 											<span>
-												<span>John Smith</span>
-												<span class="time">3 mins ago</span>
+												<span>어등산CC</span>
+												<span class="time">16분전</span>
 											</span>
 											<span class="message">
-												Film festivals used to be do-or-die moments for movie makers. They were where...
+												2023년 3월 17일 11시 ~ 13시 조회결과 티 없음
 											</span>
 										</a>
 									</li>
 									<li class="nav-item">
 										<a class="dropdown-item">
-											<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+											<!--<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>-->
 											<span>
-												<span>John Smith</span>
-												<span class="time">3 mins ago</span>
+												<span>어등산CC</span>
+												<span class="time">11분전</span>
 											</span>
 											<span class="message">
-												Film festivals used to be do-or-die moments for movie makers. They were where...
+												2023년 3월 17일 11시 ~ 13시 조회결과 티 없음
 											</span>
 										</a>
 									</li>
 									<li class="nav-item">
 										<a class="dropdown-item">
-											<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+											<!--<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>-->
 											<span>
-												<span>John Smith</span>
-												<span class="time">3 mins ago</span>
+												<span>어등산CC</span>
+												<span class="time">6분전</span>
 											</span>
 											<span class="message">
-												Film festivals used to be do-or-die moments for movie makers. They were where...
+												2023년 3월 17일 11시 ~ 13시 조회결과 티 없음
 											</span>
 										</a>
 									</li>
 									<li class="nav-item">
 										<a class="dropdown-item">
-											<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+											<!--<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>-->
 											<span>
-												<span>John Smith</span>
-												<span class="time">3 mins ago</span>
+												<span>어등산CC</span>
+												<span class="time">1분전</span>
 											</span>
 											<span class="message">
-												Film festivals used to be do-or-die moments for movie makers. They were where...
+												2023년 3월 17일 11시 ~ 13시 조회결과 11시7분 9홀 예약완료
 											</span>
 										</a>
 									</li>
 									<li class="nav-item">
 										<div class="text-center">
 											<a class="dropdown-item">
-												<strong>See All Alerts</strong>
+												<strong>모든 로그 보기</strong>
 												<i class="fa fa-angle-right"></i>
 											</a>
 										</div>
@@ -270,7 +275,7 @@
 						</ul>
 					</nav>
 				</div>
-			</div>-->
+			</div>
 			<!-- /top navigation -->
 
 			<!-- page content -->
@@ -278,7 +283,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>예약정보입력</h3>
+							<h3>CC계정등록</h3>
 						</div>
 
 						<div class="title_right">
@@ -297,7 +302,7 @@
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
 								<div class="x_title">
-									<h2>희망정보 입력 <small>Enter desired information</small></h2>
+									<h2>계정정보 입력 <small>Enter desired information</small></h2>
 									<!--<ul class="nav navbar-right panel_toolbox">
 										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 										</li>
@@ -320,151 +325,28 @@
 									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="cc_name">골프장선택
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="ccname2">골프장 선택
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" id = "cc_name">
+												<select class="form-control" id = "ccname2">
 													<option>선택</option>
-													<option value="어등산">어등산cc</option>
-													<option value="빛고을">빛고을cc</option>
+													<option th:each="Co : ${ccname4}" th:value="${Co.CC_NAME}"
+															th:text="${Co.CC_NAME}"></option>
 												</select>
 											</div>
 										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="year">연도
+										<div class="form-group row">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="ccid"> CC아이디 <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" id = "year">
-													<option>선택</option>
-													<option value=2023>2023</option>
-												</select>
+												<input type="text" id="ccid" class="form-control  ">
 											</div>
 										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="month">월
+										<div class="form-group row">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="ccpw"> CC비밀번호 <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" id = "month">
-													<option>선택</option>
-													<option value=1>1월</option>
-													<option value=2>2월</option>
-													<option value=3>3월</option>
-													<option value=4>4월</option>
-													<option value=5>5월</option>
-													<option value=6>6월</option>
-													<option value=7>7월</option>
-													<option value=8>8월</option>
-													<option value=9>9월</option>
-													<option value=10>10월</option>
-													<option value=11>11월</option>
-													<option value=12>12월</option>
-												</select>
-											</div>
-										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="day">일
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" id = "day">
-													<option>선택</option>
-													<option value=1>1일</option>
-													<option value=2>2일</option>
-													<option value=3>3일</option>
-													<option value=4>4일</option>
-													<option value=5>5일</option>
-													<option value=6>6일</option>
-													<option value=7>7일</option>
-													<option value=8>8일</option>
-													<option value=9>9일</option>
-													<option value=10>10일</option>
-													<option value=11>11일</option>
-													<option value=12>12일</option>
-													<option value=13>13일</option>
-													<option value=14>14일</option>
-													<option value=15>15일</option>
-													<option value=16>16일</option>
-													<option value=17>17일</option>
-													<option value=18>18일</option>
-													<option value=19>19일</option>
-													<option value=20>20일</option>
-													<option value=21>21일</option>
-													<option value=22>22일</option>
-													<option value=23>23일</option>
-													<option value=24>24일</option>
-													<option value=25>25일</option>
-													<option value=26>26일</option>
-													<option value=27>27일</option>
-													<option value=28>28일</option>
-													<option value=29>29일</option>
-													<option value=30>30일</option>
-													<option value=31>31일</option>
-												</select>
-											</div>
-										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="t1">희망시간
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" id = "t1">
-													<option>선택</option>
-													<option value=6>06</option>
-													<option value=7>07</option>
-													<option value=8>08</option>
-													<option value=9>09</option>
-													<option value=10>10</option>
-													<option value=11>11</option>
-													<option value=12>12</option>
-													<option value=13>13</option>
-													<option value=14>14</option>
-													<option value=15>15</option>
-													<option value=16>16</option>
-													<option value=17>17</option>
-												</select>
-											</div>
-										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="t2">~
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" id = "t2">
-													<option>선택</option>
-													<option value=6>06</option>
-													<option value=7>07</option>
-													<option value=8>08</option>
-													<option value=9>09</option>
-													<option value=10>10</option>
-													<option value=11>11</option>
-													<option value=12>12</option>
-													<option value=13>13</option>
-													<option value=14>14</option>
-													<option value=15>15</option>
-													<option value=16>16</option>
-													<option value=17>17</option>
-												</select>
-											</div>
-										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="c">코스
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" id = "c">
-													<option>선택</option>
-													<option value="2">어등코스</option>
-													<option value="3">송정코스</option>
-													<option value="4">하남코스</option>
-												</select>
-											</div>
-										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="cc">홀
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" id = "cc">
-													<option>선택</option>
-													<option value=9>9홀만</option>
-													<option value=18>18홀만</option>
-													<option value=0>상관없음</option>
-												</select>
+												<input type="password" id="ccpw" class="form-control  ">
 											</div>
 										</div>
 										<!--<div class="item form-group">
@@ -510,9 +392,8 @@
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
-												<!--<button class="btn btn-primary" type="button">Cancel</button>-->
-												<button class="btn btn-primary" type="reset">리셋</button>
-												<button type="submit" class="btn btn-success">예약하기</button>
+												<button onclick="ccjoin()" id="save" class="btn btn-primary" type="button">등록</button>
+												<!--<button onclick="login()">로그인</button>-->
 											</div>
 										</div>
 
@@ -1496,5 +1377,7 @@
 	<script src="/vendors/starrr/dist/starrr.js"></script>
 	<!-- Custom Theme Scripts -->
 	<script src="/build/js/custom.min.js"></script>
+
+	<script src="docs/js/cc_join.js"></script>
 
 </body></html>

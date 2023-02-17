@@ -4,10 +4,8 @@ function Countryclub(){
     const cccancel = $("#cccancel").val();
     const ccopen = $("#ccopen").val();
     const cctype = $("#cctype").val();
-    console.log("1");
 //    const ccrv = $("input[name='ccrv']:checked").val();
     const ccrv = $("#ccrv").val();
-    console.log("2");
     const data = {
         'ccname' : ccname,
         'ccurl' : ccurl,

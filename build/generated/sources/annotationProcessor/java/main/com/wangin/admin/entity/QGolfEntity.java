@@ -21,13 +21,13 @@ public class QGolfEntity extends EntityPathBase<GolfEntity> {
 
     public final StringPath RI_CA_ID = createString("RI_CA_ID");
 
-    public final NumberPath<Integer> RI_CA_NO = createNumber("RI_CA_NO", Integer.class);
+    public final NumberPath<Long> RI_CA_NO = createNumber("RI_CA_NO", Long.class);
 
     public final StringPath RI_CA_PASSWORD = createString("RI_CA_PASSWORD");
 
     public final StringPath RI_CANCLE_DAY = createString("RI_CANCLE_DAY");
 
-    public final NumberPath<Integer> RI_CC_NO = createNumber("RI_CC_NO", Integer.class);
+    public final NumberPath<Long> RI_CC_NO = createNumber("RI_CC_NO", Long.class);
 
     public final NumberPath<Integer> RI_CHOICE = createNumber("RI_CHOICE", Integer.class);
 
@@ -55,7 +55,7 @@ public class QGolfEntity extends EntityPathBase<GolfEntity> {
 
     public final StringPath RI_UDATETIME = createString("RI_UDATETIME");
 
-    public final NumberPath<Integer> RI_UI_NO = createNumber("RI_UI_NO", Integer.class);
+    public final NumberPath<Long> RI_UI_NO = createNumber("RI_UI_NO", Long.class);
 
     public final NumberPath<Integer> RI_YEAR = createNumber("RI_YEAR", Integer.class);
 

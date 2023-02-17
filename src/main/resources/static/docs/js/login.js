@@ -1,23 +1,21 @@
 const userId = document.getElementById("userid");
 const userPw = document.getElementById("userpw");
 const btnLogin = document.getElementById("btnlogin");
-
-userId.addEventListener("change", event => {
-    noSpaceForm(userId);
-});
-userId.addEventListener("keyup", event => {
-    noSpaceForm(userId);
-});
-
-userPw.addEventListener("change", event => {
-    noSpaceForm(userPw);
-});
-userPw.addEventListener("keyup", event => {
-    noSpaceForm(userPw);
-});
+//userId.addEventListener("change", event => {
+//    noSpaceForm(userId);
+//});
+//userId.addEventListener("keyup", event => {
+//    noSpaceForm(userId);
+//});
+//
+//userPw.addEventListener("change", event => {
+//    noSpaceForm(userPw);
+//});
+//userPw.addEventListener("keyup", event => {
+//    noSpaceForm(userPw);
+//});
 
 btnLogin.addEventListener("click", handlerLogin);
-
 
 function enterkey(){
     if(window.event.keyCode == 13){
@@ -80,16 +78,17 @@ function handlerLogin() {
 
 
 //공백입력막기
-function noSpaceForm(obj) {
-    let str_space = /\s/;
-    if (str_space.exec(obj.value)) {
-//        swal({
-//            title: "공백을 사용할 수 없습니다.",
-//            icon: "error",
-//            button: "확인"
-//        });
-        obj.focus();
-        obj.value = obj.value.replace(' ', '');
-        return false;
-    }
-}
+//function noSpaceForm(obj) {
+//    let str_space = /\s/;
+//    if (str_space.exec(obj.value)) {
+////        swal({
+////            title: "공백을 사용할 수 없습니다.",
+////            icon: "error",
+////            button: "확인"
+////        });
+//        obj.focus();
+//        obj.value = obj.value.replace(' ', '');
+//        return false;
+//    }
+//}
+

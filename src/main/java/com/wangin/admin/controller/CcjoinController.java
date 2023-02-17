@@ -36,9 +36,9 @@ public class CcjoinController {
         if(new SessionCheck().loginSessionCheck(request)){
             List<CcEntity> ccn = ccRepository.findAll();
             m.addAttribute("ccname4",ccn);
-            returnValue = "ccjoin";
+            returnValue = "formCA";
         }else{
-            returnValue = "golfchoice";
+            returnValue = "formRI";
         }
         return returnValue;
     }
@@ -49,6 +49,7 @@ public class CcjoinController {
                           @RequestParam(required = false, defaultValue = "", value = "ccname2") String ccname2,
                           @RequestParam(required = false, defaultValue = "", value = "ccid") String ccid,
                           @RequestParam(required = false, defaultValue = "", value = "ccpw") String ccpw){
+        System.out.println(ccname2+ccid+ccpw);
         HttpSession session = request.getSession();
         String sessioninid = (String) session.getAttribute("user_signature");
         Optional<CcEntity> ccnn = ccRepository.findOne(CcPredicate.ccname(ccname2));
@@ -67,6 +68,6 @@ public class CcjoinController {
         CaDto caDto = new CaDto(null, finduinum, findccnum, ccid, ccpw, status,null,null);
         golfService.Cainsert(caDto);
 
-        return "golfchoice";
+        return "formCA";
     }
 }
