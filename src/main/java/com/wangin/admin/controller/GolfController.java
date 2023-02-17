@@ -48,7 +48,7 @@ public class GolfController {
 
     private GolfRepository golfRepository;
 
-//    @GetMapping("/")
+    //    @GetMapping("/")
 //    public String main(){
 //        return "golfchoice";
 //    }
@@ -56,7 +56,7 @@ public class GolfController {
     public String main(){
         List<RlEntity> log = rlRepository.findAll();
         return "formRI";
-        }
+    }
 
     @GetMapping("/gjoin")
     public String gjoin(){
@@ -78,7 +78,7 @@ public class GolfController {
             Long finduinum = guet.get().getUI_NO();
             List<GolfEntity> listgolfentity = (List)golfRepository.findAll(RvPredicate.rvv(finduinum));
             m.addAttribute("rvinfo",listgolfentity);
-            returnValue = "rvcheck";
+            returnValue = "formRV";
         }else{
             returnValue = "formRI.html";
         }
